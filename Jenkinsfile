@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Clean and build the Gradle project
-                sh './gradlew clean build'
+                sh './gradlew clean build -Dorg.gradle.jvmargs="-Xmx2048m -Dfile.encoding=UTF-8"'
             }
         }
     }
