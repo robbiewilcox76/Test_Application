@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        ANDROID_HOME = '/opt/android-sdk'
+        PATH = "$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+    }
 
     stages {
         stage('Build') {
